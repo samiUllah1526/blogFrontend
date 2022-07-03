@@ -1,4 +1,5 @@
-import("dotenv").config();
+// import dotenv from "dotenv";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,6 +14,7 @@ import { CreateBlog } from "./pages/CreateBlog";
 import { SearchResult } from "./pages/SearchResult";
 import { UpdateBlog } from "./pages/UpdateBlog";
 import { Page404 } from "./pages/Page404";
+// dotenv.config();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
