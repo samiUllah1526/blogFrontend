@@ -24,7 +24,10 @@ export const BlogPage = () => {
   return (
     <>
       <NavigationBar id={params.id} blog={blog}>
+        <img src={blog?.imageUrl} />
         <h1 className={styles.textCenter}>{blog?.title}</h1>
+        <h1 className={styles.textCenter}>{blog?.author}</h1>
+        <h1 className={styles.textCenter}>{blog?.category}</h1>
         <p className={styles.textCenter}>{blog?.description}</p>
       </NavigationBar>
     </>

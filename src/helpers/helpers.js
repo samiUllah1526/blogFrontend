@@ -1,7 +1,8 @@
 const API_URL = process.env.REACT_APP_API_URL;
 
 export const getAllBlogs = async () => {
-  const res = await fetch(`${process.env.API_URL}/api/v1/blogs`);
+  console.log("API_URL", API_URL);
+  const res = await fetch(`${API_URL}/api/v1/blogs`);
   const result = await res.json();
   //   console.log("result", result);
   return result;
