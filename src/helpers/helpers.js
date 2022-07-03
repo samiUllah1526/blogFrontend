@@ -1,7 +1,7 @@
 //
 
 export const getAllBlogs = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/blogs");
+  const res = await fetch(`${process.env.API_URL}/api/v1/blogs`);
   const result = await res.json();
   //   console.log("result", result);
   return result;
@@ -13,20 +13,20 @@ export const getBlogsbyCategory = async (category) => {
     return [];
   }
   const res = await fetch(
-    `http://localhost:5000/api/v1/blogs?category=${category}`
+    `${process.env.API_URL}/api/v1/blogs?category=${category}`
   );
   const result = await res.json();
   return result;
 };
 
 export const getBlogById = async (id) => {
-  const res = await fetch(`http://localhost:5000/api/v1/blogs/${id}`);
+  const res = await fetch(`${process.env.API_URL}/api/v1/blogs/${id}`);
   const result = await res.json();
   return result;
 };
 
 export const createBlog = async (data) => {
-  const response = await fetch("http://localhost:5000/api/v1/blogs", {
+  const response = await fetch(`${process.env.API_URL}/api/v1/blogs`, {
     method: "POST", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -44,7 +44,7 @@ export const createBlog = async (data) => {
 };
 
 export const updateBlog = async (id, data) => {
-  const response = await fetch(`http://localhost:5000/api/v1/blogs/${id}`, {
+  const response = await fetch(`${process.env.API_URL}/api/v1/blogs/${id}`, {
     method: "PUT", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
@@ -61,7 +61,7 @@ export const updateBlog = async (id, data) => {
 };
 
 export const deleteBlogById = async (id) => {
-  const response = await fetch(`http://localhost:5000/api/v1/blogs/${id}`, {
+  const response = await fetch(`${process.env.API_URL}/api/v1/blogs/${id}`, {
     method: "DELETE", // *GET, POST, PUT, DELETE, etc.
     mode: "cors", // no-cors, *cors, same-origin
     cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
